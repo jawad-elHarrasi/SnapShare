@@ -27,7 +27,6 @@ To run or develop this project, you will need:
 - **PHP 8.0 or higher**
 - **Composer** (Dependency Manager)
 - **MySQL** (or any compatible database)
-- **OpenSSL** (for generating public/private key pairs)
 - **HTTPS** enabled on your server
 
 ## Installation
