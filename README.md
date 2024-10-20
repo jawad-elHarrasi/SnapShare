@@ -1,81 +1,89 @@
-```markdown
-# Secure Photo Album Management System
 
-## Project Overview
+# Secure Photo & Album Upload Platform
 
-This project aims to implement a secure client/server system for managing photo albums. Users can upload a collection of images to a photo album and share either the entire album or specific images with other users.
+## Description
+
+This project is a web application that allows users to upload and manage their photos and albums securely. The application uses a **public/private key encryption** system for secure data storage, **HTTPS** for encrypted communication, **CAPTCHA** for bot prevention, and is styled with **Bootstrap** for a modern and responsive design.
+
+### Security Features
+- **Encrypted Database**: All uploaded photos and albums are stored in a database with encryption to ensure confidentiality.
+- **Public/Private Key**: Secure encryption mechanism using a public/private key pair for user authentication and data access.
+- **HTTPS**: Ensures that all communications between the user and the server are encrypted and secure.
+- **CAPTCHA**: Implements CAPTCHA on the upload page to prevent automated submissions and enhance security.
+- **User Sharing**: Allow users to securely share albums with other registered users.
+
+## Technologies Used
+
+- **Laravel**: Backend framework for handling routes, authentication, and database operations.
+- **MySQL**: Encrypted database storage for photos and albums.
+- **Bootstrap**: Frontend styling framework for a responsive UI.
+- **CAPTCHA**: Used to prevent bot submissions during the photo upload process.
+- **Public/Private Key Encryption**: Used for secure data storage and authentication.
 
 ## Prerequisites
 
-Make sure you have the following tools installed on your machine:
-- PHP >= 8.3
-- Composer
-- Node.js with npm
-- SQLite
-- Laragon (optional for simpler setup)
-```
+To run or develop this project, you will need:
+
+- **PHP 8.0 or higher**
+- **Composer** (Dependency Manager)
+- **MySQL** (or any compatible database)
+- **OpenSSL** (for generating public/private key pairs)
+- **HTTPS** enabled on your server
+
 ## Installation
 
-1. Clone the repository:
-   ```
-   git clone https://git.esi-bru.be/60344/projet_secu.git
-   cd projet_secu/album
-   ```
+To set up the project locally, follow these steps:
 
-2. Copy the example configuration file `.env`:
-   ```sh
-   cp .env.example .env
-   ```
+1. **Clone the Repository**
 
-3. Update Composer dependencies:
-   ```sh
-   composer update
-   ```
+```bash
+git clone https://github.com/user/secure-photo-upload.git
+cd album_secu
+```
 
-4. Install Composer dependencies:
-   ```sh
-   composer install
-   ```
+2. **Install Dependencies**
 
-5. Generate the application key:
-   ```sh
-   php artisan key:generate
-   ```
+```bash
+composer install
+```
 
-6. Run database migrations:
-   ```sh
-   php artisan migrate
-   ```
+3. **Set Up Environment Variables**
 
-7. Install npm dependencies:
-   ```sh
-   npm install
-   ```
+Copy the example environment file and update it with your own settings:
 
-8. Build the assets with npm:
-   ```sh
-   npm run build
-   ```
+```bash
+cp .env.example .env
+```
 
-9. Start the development server:
-   ```sh
-   php artisan serve
-   ```
+Update the `.env` file with your database credentials and other environment-specific details, such as the public/private key pair for encryption.
 
-## Using Laragon (for https)
+4. **Generate Application Key**
 
-If you prefer to use Laragon for a simpler setup:
+Generate a new application key using Artisan:
 
-1. Download Laragon.
-2. Place your project in the `C:\laragon\www` folder.
-3. Open Laragon and start all services.
-4. For https setup, follow a tutorial for guidance.
+```bash
+php artisan key:generate
+```
 
-## Group Members
+5. **Run Migrations**
 
-- **Cimen Guclu**: 60531
-- **Jawad El Harrasi**: 60177
-- **Wassim Turk**: 60384
-- **Nathanael Ors**: 60282
-- **Naoufal El Alaoui**: 60344
-- **Iman Azoioui**: 61434
+Run the database migrations to create the necessary tables for the application:
+
+```bash
+php artisan migrate
+```
+(Answer `yes` to the prompt if required.)
+
+6. **Install Frontend Dependencies**
+
+Install Node.js dependencies:
+
+```bash
+npm install
+```
+
+Build the frontend assets:
+
+```bash
+npm run build
+```
