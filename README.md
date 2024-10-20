@@ -36,7 +36,7 @@ To set up the project locally, follow these steps:
 1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/user/secure-photo-upload.git
+git clone https://github.com/jawad-elHarrasi/SnapShare.git
 cd album_secu
 ```
 
